@@ -25,7 +25,7 @@ int _strcmp(char *str1, char *str2)
  * @str1: first string to compare
  * @str2: second string to compare
  * @length: length of string to compare
- * 
+ *
  * Return: 0 for success
  */
 

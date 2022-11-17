@@ -3,7 +3,6 @@
 /**
  * _puts - functiont to write string
  * @str: string to write
- * 
  * Return: void
  */
 
