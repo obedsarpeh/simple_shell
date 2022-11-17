@@ -1,15 +1,15 @@
 #include "shell.h"
 /**
  * executor - function to execute new processes
- * @input: input from user
+ * @i: input from user
  * @ar1: array to be handled by execve
  * @new: duplicate of line
  * @ar2: Tokens to check
  * @argv: arguments
- * @failed: number of commands that have failed
+ * @f: number of commands that have failed
  * Return: 0 for success
  */
-int executor(char *input, char **ar1, char *new, char **ar2, char **argv, int failed)
+int executor(char *i, char **ar1, char *new, char **ar2, char **argv, int f)
 {
 	int status, current_path = -1;
 	pid_t child;
@@ -30,9 +30,9 @@ int executor(char *input, char **ar1, char *new, char **ar2, char **argv, int fa
 	{
 		if (execve(ar1[0], ar1, environ) == -1)
 		{
-			printf("%s: %d: %s: not found\n", argv[0], failed, ar1[0]);
+			printf("%s: %d: %s: not found\n", argv[0], f, ar1[0]);
 			free(statbuf);
-			myfree(input, ar1, new, ar2);
+			myfree(i, ar1, new, ar2);
 			_exit(-1);
 		}
 	}
